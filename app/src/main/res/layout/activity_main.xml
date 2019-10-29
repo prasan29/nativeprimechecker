@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.MainActivity">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.mInput}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onSubmitClicked()}"
+            android:layout_margin="24dp"
+            android:text="@{viewModel.mButtonText}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.mResult}"
+            android:textColor="#000000"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.primechecker.viewmodel.MainViewModel" />
+    </data>
+</layout>
